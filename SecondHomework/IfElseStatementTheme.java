@@ -1,16 +1,4 @@
 public class IfElseStatementTheme {
-    public static int сalculationEval(int evalPercent) {
-        int eval = 2;
-        if(evalPercent > 91) {
-            eval = 5;
-        } else if (evalPercent > 73) {
-            eval = 4;
-        } else if (evalPercent > 60) {
-            eval = 3;
-        }
-        return eval;
-    }
-
     public static void main(String[] args) {
         System.out.println("1. Перевод псевдокода на язык Java");
         boolean male = false;
@@ -74,18 +62,18 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-        int x = 123;
+        int x = 111;
         int x1 = x % 10;
         int x2 = x / 10 % 10;
         int x3 = x / 100 % 10;
-        int y = 223;
+        int y = 111;
         int y1 = y % 10;
         int y2 = y / 10 % 10;
         int y3 = y / 100 % 10;
         boolean checkRank = false;
         System.out.printf("%d, %d\n", x, y);
         if (x3 == y3) {
-            System.out.print(x3);
+            System.out.print(x3 + " ");
             checkRank = true;
         }
         if (x2 == y2) {
@@ -99,7 +87,7 @@ public class IfElseStatementTheme {
         if (checkRank) {
             System.out.println();
             if (x3 == y3) {
-                System.out.print(1);
+                System.out.print(1 + " ");
             }
             if (x2 == y2) {
                 System.out.print(2 + " ");
@@ -127,50 +115,53 @@ public class IfElseStatementTheme {
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         double depositAmount = 301_100;
         double amountInterest = 0;
-        System.out.println("Сумма вклада: " + String.format("%.2f", depositAmount));
         if (depositAmount > 0 && depositAmount < 100_000) {
-            amountInterest = depositAmount*5/100;
-            System.out.println("Сумма начисленного %: " + String.format("%.2f", amountInterest));
-            System.out.println("Итоговая сумма: " + String.format("%.2f", depositAmount
-                    + amountInterest));
+            amountInterest = depositAmount * 5 / 100;
         } else if (depositAmount > 300_000) {
-            amountInterest = depositAmount*10/100;
-            System.out.println("Сумма начисленного %: " + String.format("%.2f", amountInterest));
-            System.out.println("Итоговая сумма: " + String.format("%.2f", depositAmount
-                    + amountInterest));
+            amountInterest = depositAmount * 10 / 100;
         } else if (depositAmount >= 100_000 && depositAmount <= 300_000){
-            amountInterest = depositAmount*7/100;
-            System.out.println("Сумма начисленного %: " + String.format("%.2f", amountInterest));
-            System.out.println("Итоговая сумма: " + String.format("%.2f", depositAmount
-                    + amountInterest));
-        } else {
-            System.out.println("На счету нет денег или имеется задолженность!"
-                    + "Депозит нельзя рассчитать");
+            amountInterest = depositAmount * 7 / 100;
         }
+        System.out.println("Сумма вклада: " + String.format("%.2f", depositAmount));
+        System.out.println("Сумма начисленного %: " + String.format("%.2f", amountInterest));
+        System.out.println("Итоговая сумма: " + String.format("%.2f",
+                depositAmount + amountInterest));
 
         System.out.println("\n7. Определение оценки по предметам");
-        int evalFinalHistory = 59;
-        int evalFinalProgramming = 92;
-        int evalHistory = сalculationEval(evalFinalHistory);
-        int evalProgramming = сalculationEval(evalFinalProgramming);
-        System.out.println("Итоговая оценка по Истории: " + evalFinalHistory
-                + "% Оценка по Истории: " + evalHistory);
-        System.out.println("Итоговая оценка по Программированию: " + evalFinalProgramming
-                + "% Оценка по Программированию: " + evalProgramming);
+        int historyPercent = 59;
+        int csPercent = 92;
+        int historyGrade = determineGrade(historyPercent);
+        int csGrade = determineGrade(csPercent);
+        System.out.println("Итоговая оценка по Истории: " + historyPercent
+                + "% Оценка по Истории: " + historyGrade);
+        System.out.println("Итоговая оценка по Программированию: " + csPercent
+                + "% Оценка по Программированию: " + csGrade);
         System.out.println("Средний балл оценок по предметам: "
-                + (double) (evalHistory + evalProgramming) / 2);
+                + (double) (historyGrade + csGrade) / 2);
         System.out.println("Cредний % по предметам: "
-                + (double) (evalFinalHistory + evalFinalProgramming) / 2);
+                + (double) (historyPercent + csPercent) / 2);
 
         System.out.println("\n8. Расчет годовой прибыли");
         int saleProduct = 13000;
         int premisesRental = 5000;
         int costPrice = 9000;
-        int profit = (saleProduct + premisesRental) * 12 - costPrice * 12;
+        int profit = ((saleProduct + premisesRental) - costPrice) * 12;
         if (profit > 0) {
             System.out.println("Прибыль за год: +" + profit);
         } else {
             System.out.println("Прибыль за год: " + profit);
         }
+    }
+
+    private static int determineGrade(int percent) {
+        int grade = 2;
+        if(percent > 91) {
+            grade = 5;
+        } else if (percent > 73) {
+            grade = 4;
+        } else if (percent > 60) {
+            grade = 3;
+        }
+        return grade;
     }
 }
