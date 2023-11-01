@@ -62,37 +62,37 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-        int x = 111;
-        int x1 = x % 10;
-        int x2 = x / 10 % 10;
-        int x3 = x / 100 % 10;
-        int y = 111;
-        int y1 = y % 10;
-        int y2 = y / 10 % 10;
-        int y3 = y / 100 % 10;
+        num = 111;
+        int numHundreds = num % 10;
+        int numTens = num / 10 % 10;
+        int numUnits = num / 100 % 10;
+        int secondNum = 111;
+        int secondNumHundreds = secondNum % 10;
+        int secondNumTens = secondNum / 10 % 10;
+        int secondNumUnits = secondNum / 100 % 10;
         boolean checkRank = false;
-        System.out.printf("%d, %d\n", x, y);
-        if (x3 == y3) {
-            System.out.print(x3 + " ");
+        System.out.printf("%d, %d\n", num, secondNum);
+        if (numUnits == secondNumUnits) {
+            System.out.print(numUnits + " ");
             checkRank = true;
         }
-        if (x2 == y2) {
-            System.out.print(x2 + " ");
+        if (numTens == secondNumTens) {
+            System.out.print(numTens + " ");
             checkRank = true;
         }
-        if (x1 == y1) {
-            System.out.print(x1 + " ");
+        if (numHundreds == secondNumHundreds) {
+            System.out.print(numHundreds + " ");
             checkRank = true;
         }
         if (checkRank) {
             System.out.println();
-            if (x3 == y3) {
+            if (numUnits == secondNumUnits) {
                 System.out.print(1 + " ");
             }
-            if (x2 == y2) {
+            if (numTens == secondNumTens) {
                 System.out.print(2 + " ");
             }
-            if (x1 == y1) {
+            if (numHundreds == secondNumHundreds) {
                 System.out.print(3 + " ");
             }
         }
