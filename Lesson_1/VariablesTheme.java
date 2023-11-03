@@ -30,9 +30,9 @@ public class VariablesTheme {
 
         System.out.println("\n3. Вывод слова JAVA");
         System.out.println("   J    a  V     V  a   "
-                       + "\n   J   a a  V   V  a a  "
-                       + "\nJ  J  aaaaa  V V  aaaaa "
-                       + "\n JJ  a     a  v  a     a");
+                + "\n   J   a a  V   V  a a  "
+                + "\nJ  J  aaaaa  V V  aaaaa "
+                + "\n JJ  a     a  v  a     a");
 
         System.out.println("\n4. Вывод min и max значений целых числовых типов");
         byte maxByte = 127;
@@ -40,35 +40,35 @@ public class VariablesTheme {
         int maxInt = 2147483647;
         long maxLong = 9_223_372_036_854_775_807l;
         System.out.printf("Первоначальное значение: %d, min значение типа byte: %d, "
-            + "max значение типа byte: %d\n", maxByte, ++maxByte, --maxByte);
+                + "max значение типа byte: %d\n", maxByte, ++maxByte, --maxByte);
         System.out.printf("Первоначальное значение: %d, min значение типа short: %d, "
-            + "max значение типа short: %d\n", maxShort, ++maxShort, --maxShort);
+                + "max значение типа short: %d\n", maxShort, ++maxShort, --maxShort);
         System.out.printf("Первоначальное значение: %d, min значение типа int: %d, "
-            + "max значение типа int: %d\n", maxInt, ++maxInt, --maxInt);
+                + "max значение типа int: %d\n", maxInt, ++maxInt, --maxInt);
         System.out.printf("Первоначальное значение: %d, min значение типа long: %d, "
-            + "max значение типа long: %d\n", maxLong, ++maxLong, --maxLong);
+                + "max значение типа long: %d\n", maxLong, ++maxLong, --maxLong);
 
         System.out.println("\n5. Перестановка значений переменных");
-        int num1 = 2;
-        int num2 = 5;
+        int a = 2;
+        int b = 5;
         System.out.printf("Способ третьей переменной. \nПервоначальные значение num1: "
-            + "%d, значение num2: %d\n", num1, num2);
-        int tmp = num1;
-        num1 = num2;
-        num2 = tmp;
-        System.out.printf("Новые значения num1: %d, значение num2 %d\n", num1, num2);
+                + "%d, значение num2: %d\n", a, b);
+        int tmp = a;
+        a = b;
+        b = tmp;
+        System.out.printf("Новые значения num1: %d, значение num2 %d\n", a, b);
         System.out.printf("Способ арифметических операций. \nПервоначальные значение num1: %d, "
-            + "значение num2: %d\n", num1, num2);
-        num1 -= num2;
-        num2 += num1;
-        num1 = num2 - num1;
-        System.out.printf("Новые значения num1: %d, значение num2 %d\n", num1, num2);
+                + "значение num2: %d\n", a, b);
+        a -= b;
+        b += a;
+        a = b - a;
+        System.out.printf("Новые значения num1: %d, значение num2 %d\n", a, b);
         System.out.printf("Способ побитовых операций. \nПервоначальные значение num1: %d, "
-            + "значение num2: %d\n", num1, num2);
-        num1 ^= num2;
-        num2 = num1 ^ num2;
-        num1 ^= num2;
-        System.out.printf("Новые значения num1: %d, значение num2 %d\n", num1, num2);
+                + "значение num2: %d\n", a, b);
+        a ^= b;
+        b = a ^ b;
+        a ^= b;
+        System.out.printf("Новые значения num1: %d, значение num2: %d\n", a, b);
 
         System.out.println("\n6. Вывод символов и их кодов");
         char dollar = '$';
@@ -91,22 +91,22 @@ public class VariablesTheme {
         System.out.printf("    %c%c\n", slash, backSlash);
         System.out.printf("   %c  %c\n", slash, backSlash);
         System.out.printf("  %c%c%c %c%c\n", slash, underScore, 
-            leftPrenthesis, rightParenthesis, backSlash);
+                leftPrenthesis, rightParenthesis, backSlash);
         System.out.printf(" %c      %c\n", slash, backSlash);
         System.out.printf("%c%c%c%c%c%c%c%c%c%c\n", slash, underScore, underScore, underScore, 
-            underScore, slash, backSlash, underScore, underScore, backSlash);
+                underScore, slash, backSlash, underScore, underScore, backSlash);
 
         System.out.println("\n8. Вывод количества сотен, десятков и единиц числа");
         int num = 123;
         int ones = num % 10;
-        int ten = num / 10 % 10;
-        int hundred = num / 100 % 10;
+        int tens = num / 10 % 10;
+        int hundreds = num / 100;
         System.out.println("Число N содержит:");
-        System.out.println("  сотен - " + hundred);
-        System.out.println("  десятков - " + ten);
+        System.out.println("  сотен - " + hundreds);
+        System.out.println("  десятков - " + tens);
         System.out.println("  единиц - " + ones);
-        System.out.println("Сумма его цифр = " + (ones + ten + hundred));
-        System.out.println("Произведение = " + (ones * ten * hundred));
+        System.out.println("Сумма его цифр = " + (ones + tens + hundreds));
+        System.out.println("Произведение = " + (ones * tens * hundreds));
 
         System.out.println("\n9. Вывод времени");
         int totalSeconds = 86399;
