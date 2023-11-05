@@ -66,7 +66,7 @@ public class VariablesTheme {
         System.out.printf("Способ побитовых операций. \nПервоначальные значение num1: %d, "
                 + "значение num2: %d\n", a, b);
         a ^= b;
-        b = a ^ b;
+        b ^= a;
         a ^= b;
         System.out.printf("Новые значения num1: %d, значение num2: %d\n", a, b);
 
