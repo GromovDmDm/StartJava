@@ -32,14 +32,14 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n2. Поиск большего числа");
-        int num1 = 10;
-        int num2 = 1;
-        if (num1 > num2) {
-            System.out.printf("Число %d больше числа %d\n", num1, num2);
-        } else if (num1 == num2) {
-            System.out.printf("Число %d равно числу %d\n", num1, num2);
+        int a = 10;
+        int b = 1;
+        if (a > b) {
+            System.out.printf("Число %d больше числа %d\n", a, b);
+        } else if (a == b) {
+            System.out.printf("Число %d равно числу %d\n", a, b);
         } else {
-            System.out.printf("Число %d меньше числа %d\n", num1, num2);
+            System.out.printf("Число %d меньше числа %d\n", a, b);
         }
 
         System.out.println("\n3. Проверка числа");
@@ -62,70 +62,66 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-        num = 111;
-        int numHundreds = num % 10;
-        int numTens = num / 10 % 10;
-        int numUnits = num / 100 % 10;
-        int secondNum = 111;
-        int secondNumHundreds = secondNum % 10;
-        int secondNumTens = secondNum / 10 % 10;
-        int secondNumUnits = secondNum / 100 % 10;
+        int num1 = 123;
+        int num2 = 123;
+        int numHundreds = num1 % 10;
+        int numTens = num1 / 10 % 10;
+        int numOnes = num1 / 100;
+        int secondNumHundreds = num2 % 10;
+        int secondNumTens = num2 / 10 % 10;
+        int secondNumUnits = num2 / 100;
         boolean checkRank = false;
-        System.out.printf("%d, %d\n", num, secondNum);
-        if (numUnits == secondNumUnits) {
-            System.out.print(numUnits + " ");
+        System.out.printf("%d, %d\n", num1, num2);
+        if (numOnes == secondNumUnits) {
+            System.out.print(numOnes + " ");
             checkRank = true;
         }
         if (numTens == secondNumTens) {
             System.out.print(numTens + " ");
             checkRank = true;
-        }
+        } 
         if (numHundreds == secondNumHundreds) {
             System.out.print(numHundreds + " ");
             checkRank = true;
         }
         if (checkRank) {
             System.out.println();
-            if (numUnits == secondNumUnits) {
-                System.out.print(1 + " ");
+            if (numOnes == secondNumUnits) {
+                System.out.print(3 + " ");
             }
             if (numTens == secondNumTens) {
                 System.out.print(2 + " ");
             }
             if (numHundreds == secondNumHundreds) {
-                System.out.print(3 + " ");
+                System.out.print(1 + " ");
             }
         }
 
         System.out.println("\n\n5. Определение символа по его коду");
         char symbol = '\u0057';
-        String numbers = "0123456789";
-        String lowerСase = "abcdefghijklmnopqrstuvwxyz";
-        String upperСase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        if (numbers.indexOf(symbol) >= 0) {
-            System.out.printf("Символ '%c' является цифрой\n", symbol);
-        } else if (lowerСase.indexOf(symbol) >= 0) {
+        if (symbol >= 'a' && symbol <= 'z') {
             System.out.printf("Символ '%c' является маленькой буквой\n", symbol);
-        } else if (upperСase.indexOf(symbol) >= 0) {
+        } else if (symbol >= 'A' && symbol <= 'Z') {
             System.out.printf("Символ '%c' является большой буквой\n", symbol);
+        } else if (symbol >= '1' && symbol <= '9') {
+            System.out.printf("Символ '%c' является цифрой\n", symbol);
         } else {
             System.out.printf("Символ '%c' является не буквой не цифрой\n", symbol);
         }
 
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         double depositAmount = 301_100;
-        double amountInterest = 0;
+        double percent = 7;
         if (depositAmount > 0 && depositAmount < 100_000) {
-            amountInterest = depositAmount * 5 / 100;
+            percent = 5;
         } else if (depositAmount > 300_000) {
-            amountInterest = depositAmount * 10 / 100;
-        } else if (depositAmount >= 100_000 && depositAmount <= 300_000){
-            amountInterest = depositAmount * 7 / 100;
+            percent = 10;
         }
-        System.out.println("Сумма вклада: " + String.format("%.2f", depositAmount));
-        System.out.println("Сумма начисленного %: " + String.format("%.2f", amountInterest));
-        System.out.println("Итоговая сумма: " + String.format("%.2f",
-                depositAmount + amountInterest));
+        double amountPercent = depositAmount * percent / 100;
+        //System.out.printf("%6d", i)
+        System.out.printf("Сумма вклада: %.2f%n", depositAmount);
+        System.out.printf("Сумма начисленного: %.2f%n", amountPercent);
+        System.out.printf("Итоговая сумма: %.2f%n", depositAmount + amountPercent);
 
         System.out.println("\n7. Определение оценки по предметам");
         int historyPercent = 59;

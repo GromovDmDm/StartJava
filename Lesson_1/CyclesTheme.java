@@ -1,10 +1,10 @@
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
-        var pointA = -10;
-        var pointB = 21;
-        var even = 0;
-        var notEven = 0;
+        int pointA = -10;
+        int pointB = 21;
+        int even = 0;
+        int notEven = 0;
         System.out.print("В отрезке [" + pointA + ", " + pointB + "]");
         do {
             if(pointA % 2 == 0) {
@@ -17,11 +17,11 @@ public class CyclesTheme {
         System.out.print(" сумма четных чисел = " + even + ", а нечетных = " + notEven);
 
         System.out.println("\n\n2. Вывод чисел в порядке убывания");
-        var num1 = 10;
-        var num2 = 5;
-        var num3 = -1;
-        var max = num1;
-        var min = num1;
+        int num1 = 10;
+        int num2 = 5;
+        int num3 = -1;
+        int max = num1;
+        int min = num1;
         if(num2 > num1 && num2 > num3) {
             max = num2;
         } else if (num3 > num1 && num3 > num2) {
@@ -32,14 +32,14 @@ public class CyclesTheme {
         } else if (num3 < num1 && num3 < num2) {
             min = num3;
         }
-        for(var i = 1; max - i > min + 1; i++) {
+        for(int i = 1; max - i > min + 1; i++) {
             System.out.print(max - i + " ");
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его циф");
-        var num = 1234;
-        var sum = 0;
-        var tmp = 0;
+        int num = 1234;
+        int sum = 0;
+        int tmp = 0;
         while (num > 0) {
             tmp = num % 10;
             sum += tmp;
@@ -49,16 +49,16 @@ public class CyclesTheme {
         System.out.println("\nСумма цифр числа равна " + sum);
 
         System.out.println("\n4. Вывод чисел в несколько строк");
-        int j = 0;
-        for(int i = 1; i < 24; i += 2, j++) {
-            if(j % 5 == 0) {
+        num = 0;
+        for(int i = 1; i < 24; i += 2, num++) {
+            if(num % 5 == 0) {
                 System.out.println();
             }
             System.out.printf("%6d", i);
         }
-        j %= 10;
-        int countZero = j <= 5 ? 5 - j : 10 - j;
-        while (countZero > 0 && j != 0) {
+        num %= 10;
+        int countZero = num <= 5 ? 5 - num : 10 - num;
+        while (countZero > 0 && num != 0) {
             System.out.printf("%6d", 0);
             --countZero;
         }
@@ -150,7 +150,7 @@ public class CyclesTheme {
         System.out.println("\n---|----------------------------------");
         for(int i = 2; i < 10; i++) {
             System.out.printf("%2d |", i);
-            for(j = 2; j < 10; j++) {
+            for(int j = 2; j < 10; j++) {
                 System.out.printf("%4d", i*j);
             }
             System.out.printf("\n");
