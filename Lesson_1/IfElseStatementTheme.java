@@ -106,10 +106,10 @@ public class IfElseStatementTheme {
         } else if (symbol >= '1' && symbol <= '9') {
             System.out.printf("Символ '%c' является цифрой\n", symbol);
         } else {
-            System.out.printf("Символ '%c' является не буквой не цифрой\n", symbol);
+            System.out.printf("Символ '%c' не являются ни буквами, ни цифрами", symbol);
         }
 
-        System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
+        System.out.println("\n\n6. Подсчет суммы вклада и начисленных банком %");
         double depositAmount = 301_100;
         double percent = 7;
         if (depositAmount > 0 && depositAmount < 100_000) {
@@ -119,11 +119,11 @@ public class IfElseStatementTheme {
         }
         double amountPercent = depositAmount * percent / 100;
         //System.out.printf("%6d", i)
-        System.out.printf("Сумма вклада: %.2f%n", depositAmount);
-        System.out.printf("Сумма начисленного: %.2f%n", amountPercent);
-        System.out.printf("Итоговая сумма: %.2f%n", depositAmount + amountPercent);
+        System.out.printf("Сумма вклада: %.2f ", depositAmount);
+        System.out.printf("Сумма начисленного: %.2f ", amountPercent);
+        System.out.printf("Итоговая сумма: %.2f ", depositAmount + amountPercent);
 
-        System.out.println("\n7. Определение оценки по предметам");
+        System.out.println("\n\n7. Определение оценки по предметам");
         int historyPercent = 59;
         int csPercent = 92;
         int historyGrade = determineGrade(historyPercent);
