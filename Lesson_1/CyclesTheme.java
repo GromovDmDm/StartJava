@@ -2,19 +2,20 @@ public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
         int startSegment = -10;
-        int copyStartSegment = startSegment;
+        int counter = startSegment;
         int endSegment = 21;
         int sumEven = 0;
         int sumOdd = 0;
         do {
-            if(startSegment % 2 == 0) {
-                sumEven += startSegment;
+            if(counter % 2 == 0) {
+                sumEven += counter;
             } else {
-                sumOdd += startSegment;
+                sumOdd += counter;
             }
-            startSegment++;
-        } while (startSegment <= endSegment);
-        System.out.printf("В отрезке [%d, %d] сумма четных чисел = %d, а нечетных = %d", copyStartSegment, endSegment, sumEven, sumOdd);
+            counter++;
+        } while (counter <= endSegment);
+        System.out.printf("В отрезке [%d, %d] сумма четных чисел = %d, а нечетных = %d",
+                startSegment, endSegment, sumEven, sumOdd);
 
         System.out.println("\n\n2. Вывод чисел в порядке убывания");
         int num1 = 10;
@@ -50,8 +51,8 @@ public class CyclesTheme {
         System.out.println("\nСумма цифр числа равна " + sum);
 
         System.out.println("\n4. Вывод чисел в несколько строк");
-        int counter = 0;
-        for(int i = 1; i < 24; i += 2) {
+        counter = 0;
+        for(int i = 1; i < 30; i += 2) {
             counter++;
             System.out.printf("%6d", i);
             if(counter % 5 == 0) {
@@ -60,20 +61,20 @@ public class CyclesTheme {
             }
         }
         int countZeros = 0;
-        while (countZeros < 5 - counter) {
+        while (countZeros < 5 - counter && counter > 0) {
             System.out.printf("%6d", 0);
             countZeros++;
         }
 
-        System.out.println("\n\n5. Проверка количества двоек числа на четность/нечетность");
-        int copynum = num = 3242592;
+        System.out.println("\n5. Проверка количества двоек числа на четность/нечетность");
+        int copyNum = num = 3242592;
         int count = 0;
         while (num > 0) {
             if (num % 10 == 2) count++;
             num /= 10;
         }
         System.out.printf("В %d (%s) количество двоек - %d",
-                copynum, count % 2 == 0 ? "чётное" : "нечётное", count);
+                copyNum, count % 2 == 0 ? "чётное" : "нечётное", count);
 
         System.out.println("\n\n6. Отображение геометрических фигур");
         for(int i = 0; i < 5; i++) {
@@ -112,14 +113,16 @@ public class CyclesTheme {
         for(int i = 15; i < 48; i += 2) {
             System.out.printf("%4d%12c%14s%s%n", i, i, "", Character.getName(i));
         }
+        for(int i = 98; i < 123; i += 2) {
+            System.out.printf("%4d%12c%14s%s%n", i, i, "", Character.getName(i));
+        }
 
         System.out.println("\n8. Проверка, является ли число палиндромом");
-        int copyNum = num = 1234321;
+        copyNum = num = 1234321;
         int invertedNum = 0;
         while (num > 0) {
-            invertedNum += num % 10;
+            invertedNum = invertedNum * 10 + num % 10;
             num /= 10;
-            if(num > 0) invertedNum *= 10;
         }
         System.out.printf("число %d %s палиндромом\n",
                 copyNum, copyNum == invertedNum ? "является" : "не является");
