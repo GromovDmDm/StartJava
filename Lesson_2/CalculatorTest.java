@@ -9,10 +9,13 @@ public class CalculatorTest {
     private static void invokeCalculator() {
         Calculator calculator = new Calculator();
         calculator.setNum(Integer.parseInt(getUserMessage("Введите первое число: ")));
-        if(!calculator.setExpression(getUserMessage("Введите знак математической операции: ")
-                .charAt(0))) return;
+        char sign = getUserMessage("Введите знак математической операции: ").charAt(0);
         calculator.setNum2(Integer.parseInt(getUserMessage("Введите второе число: ")));
-        System.out.println("Ответ:" + calculator.getResult());
+        try {
+            calculator.calculate(sign);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
         finishCalculation();
     }
 
