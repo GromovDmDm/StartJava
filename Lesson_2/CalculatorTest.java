@@ -8,9 +8,9 @@ public class CalculatorTest {
 
     private static void invokeCalculator() {
         Calculator calculator = new Calculator();
-        calculator.setNum(Integer.parseInt(getUserMessage("Введите первое число: ")));
+        calculator.setA(Integer.parseInt(getUserMessage("Введите первое число: ")));
         char sign = getUserMessage("Введите знак математической операции: ").charAt(0);
-        calculator.setNum2(Integer.parseInt(getUserMessage("Введите второе число: ")));
+        calculator.setB(Integer.parseInt(getUserMessage("Введите второе число: ")));
         try {
             calculator.calculate(sign);
         } catch (IllegalArgumentException e) {

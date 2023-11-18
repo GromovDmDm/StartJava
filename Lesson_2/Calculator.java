@@ -1,14 +1,12 @@
 public class Calculator {
     private int a;
     private int b;
-    private char sign;
-    private int result;
 
-    public void setNum(int a) {
+    public void setA(int a) {
         this.a = a;
     }
 
-    public void setNum2(int b) {
+    public void setB(int b) {
         this.b = b;
     }
 
